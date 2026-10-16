@@ -9,9 +9,12 @@
 
 | 場所 | 責務 |
 |---|---|
-| src/pages/index.astro | Portfolioの構造・固定文 |
+| src/pages/ | 日英それぞれのURLと共通画面への言語指定 |
+| src/components/PortfolioPage.astro | 共通のPortfolio構造 |
+| src/components/EngineeringPage.astro | 共通のEngineering構造 |
+| src/data/translations.ts | 型付きの日英画面文言 |
+| src/lib/i18n.ts | 言語とURL対応 |
 | src/data/portfolio.ts | プロフィール・プロジェクト紹介データ |
-| src/pages/engineering.astro | 構成・設計判断・監査状態・ビルド情報への入口 |
 | src/layouts/BaseLayout.astro | 文書言語、メタ情報、CSS、本文スキップリンク |
 | src/components/Footer.astro | Engineering導線と公開版SHAの共通表示 |
 | src/components/SourceLinks.astro | 各セクションの対応ソースリンク |
@@ -38,3 +41,5 @@ GitHub上のソース・文書の閲覧にはGitHubが必要だが、公開済�
 `npm run check`で型を確認し、`npm run build`で静的生成とリンクの整合性を検証する。
 CIとデプロイの両方で同じ検証を行う。ブラウザーでの確認範囲は各フェーズの記録に分ける。
 監査はPhase 3で実施予定であり、これらの確認はAI-Readyの品質保証を意味しない。
+
+日英の4ページを静的生成する。言語切替とメタ情報は`docs/localization.md`、選定理由はADR-0005を参照する。

@@ -1,0 +1,10 @@
+---
+import { pagePath, type Locale, type Page } from '../lib/i18n';
+import { translations } from '../data/translations';
+interface Props { lang: Locale; page: Page; }
+const { lang, page } = Astro.props;
+---
+<nav class="language-switcher" aria-label={translations[lang].language}>
+  <a href={pagePath('ja', page)} lang="ja" hreflang="ja" aria-current={lang === 'ja' ? 'page' : undefined}>日本語</a>
+  <a href={pagePath('en', page)} lang="en" hreflang="en" aria-current={lang === 'en' ? 'page' : undefined}>English</a>
+</nav>

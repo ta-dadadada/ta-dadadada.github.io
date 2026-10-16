@@ -324,3 +324,20 @@ h3 {
 .build-revision {
   overflow-wrap:anywhere;
 }
+
+.header-actions {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px 28px;
+}
+.language-switcher {
+  gap:16px;
+}
+.language-switcher [aria-current="page"] {
+  font-weight:700;
+  text-decoration:underline;
+}
+html[lang="en"] .hero h1 {
+  overflow-wrap:anywhere;
+}

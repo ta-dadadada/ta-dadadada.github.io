@@ -1,6 +1,6 @@
 # ta-dadadada — Portfolio
 
-個人開発と技術的な関心を紹介する、日本語中心の静的ポートフォリオ。
+個人開発と技術的な関心を紹介する、日本語・英語に対応した静的ポートフォリオ。
 公開先：<https://ta-dadadada.github.io/>
 
 現在はPhase 2の実装。Hero / About / Projects / Writing / Linksを単一ページにまとめています。
@@ -23,7 +23,7 @@ npm run preview
 ```
 
 `test`は公開版の参照規則の検証、`check`はAstroとTypeScriptの検証、`build`は`dist/`への静的生成と生成物のリンク整合性検査、`preview`は生成物のローカル確認です。
-掲載文は`src/data/portfolio.ts`、ページ構成と固定文は`src/pages/index.astro`、見た目は`src/styles/global.css`を編集します。
+掲載文は`src/data/portfolio.ts`、画面文言は`src/data/translations.ts`、ページ構成は`src/components/PortfolioPage.astro`と`src/components/EngineeringPage.astro`、見た目は`src/styles/global.css`を編集します。
 外部フォントやトラッキングは使用しません。公開用ビルドにクライアントJavaScriptは不要です。
 
 ## 公開
@@ -43,8 +43,17 @@ PRではCIがテスト・型チェックとビルドを行い、デプロイし�
 - [エージェント向け開発ガイド](AGENTS.md)
 
 [Engineering](https://ta-dadadada.github.io/engineering/)で構成・ADR・公開版のSHAを案内します。
-各セクションのsource / dataリンクは公開版と同じコミットのファイルを参照します。
+各セクションのsource / copy / dataリンクは公開版と同じコミットのファイルを参照します。
 ローカルはLocal previewと表示し、公開版のSHA・対応リンクを出しません。公開形式を検証する場合は、クリーンなコミットで`GITHUB_ACTIONS=true npm run build`を実行します。
 参照先を移動したら`src/lib/site-source.ts`を更新してください。
 AI-Ready監査と実作業での評価はPhase 3で扱います。
 コード・コンテンツのライセンスは未決定です。
+
+
+## 言語
+
+日本語は`/`と`/engineering/`、英語は`/en/`と`/en/engineering/`です。
+ヘッダーの日本語 / Englishで同じ種類のページを切り替えます。既定は日本語で、自動転送や選択の保存はありません。
+画面文言と紹介データを更新するときは両言語を揃えてください。GitHub上の構成文書とADRは日本語です。
+URL・言語メタ情報・参照リンクはビルド時に4ページ分を検査します。
+詳細は[日英対応](docs/localization.md)と[ADR-0005](docs/decisions/0005-localization.md)を参照してください。

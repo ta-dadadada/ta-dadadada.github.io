@@ -23,16 +23,17 @@ export const commitUrl = revision ? `${repository}/commit/${revision}` : null;
 export const repositoryUrl = revision ? `${repository}/tree/${revision}` : repository;
 
 export const sectionSources = {
-  hero: [{ label: 'source', path: 'src/pages/index.astro' }],
-  about: [{ label: 'source', path: 'src/pages/index.astro' }, { label: 'data', path: 'src/data/portfolio.ts' }],
-  projects: [{ label: 'source', path: 'src/pages/index.astro' }, { label: 'data', path: 'src/data/portfolio.ts' }],
-  writing: [{ label: 'source', path: 'src/pages/index.astro' }],
-  links: [{ label: 'source', path: 'src/pages/index.astro' }, { label: 'data', path: 'src/data/portfolio.ts' }],
+  hero: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'copy', path: 'src/data/translations.ts' }],
+  about: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'copy', path: 'src/data/translations.ts' }, { label: 'data', path: 'src/data/portfolio.ts' }],
+  projects: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'copy', path: 'src/data/translations.ts' }, { label: 'data', path: 'src/data/portfolio.ts' }],
+  writing: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'copy', path: 'src/data/translations.ts' }],
+  links: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'copy', path: 'src/data/translations.ts' }, { label: 'data', path: 'src/data/portfolio.ts' }],
 };
 
 export const decisions = [
-  { title: 'ADR-0001: Astroで静的サイトを生成する', path: 'docs/decisions/0001-static-site-generator.md' },
-  { title: 'ADR-0002: 小規模な紹介データをTypeScriptで管理する', path: 'docs/decisions/0002-content-management.md' },
-  { title: 'ADR-0003: 公開コミットをソース参照の基準にする', path: 'docs/decisions/0003-source-transparency.md' },
-  { title: 'ADR-0004: 公開コンテンツを外部サービスに依存させない', path: 'docs/decisions/0004-external-dependencies.md' },
+  { title: { ja: 'ADR-0001: Astroで静的サイトを生成する', en: 'ADR-0001: Generate a static site with Astro' }, path: 'docs/decisions/0001-static-site-generator.md' },
+  { title: { ja: 'ADR-0002: 小規模な紹介データをTypeScriptで管理する', en: 'ADR-0002: Manage small-scale content in TypeScript' }, path: 'docs/decisions/0002-content-management.md' },
+  { title: { ja: 'ADR-0003: 公開コミットをソース参照の基準にする', en: 'ADR-0003: Use the published commit as the source reference' }, path: 'docs/decisions/0003-source-transparency.md' },
+  { title: { ja: 'ADR-0004: 公開コンテンツを外部サービスに依存させない', en: 'ADR-0004: Keep published content independent of external services' }, path: 'docs/decisions/0004-external-dependencies.md' },
+  { title: { ja: 'ADR-0005: URLで言語を分けて静的生成する', en: 'ADR-0005: Generate language-specific static URLs' }, path: 'docs/decisions/0005-localization.md' },
 ];

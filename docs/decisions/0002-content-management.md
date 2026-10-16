@@ -9,7 +9,8 @@ Phase 2の時点でも長文の記事本文やサイト内の記事一覧はな�
 方針書ではMarkdownを第一候補としていたため、現時点の規模に必要な管理方法を判断する。
 
 ## Decision
-当面は`src/data/portfolio.ts`の型付きデータを継続し、固定の文や見出しはページに置く。
+当面は`src/data/portfolio.ts`の型付きデータを継続する。
+画面文言の配置は[ADR-0005](0005-localization.md)で更新し、日英文言を`src/data/translations.ts`で管理する。
 長文コンテンツや複数の記事ページが必要になった時点でMarkdown / Astro Content Collectionsを再検討する。
 
 ## Alternatives

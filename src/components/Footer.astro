@@ -1,9 +1,12 @@
 ---
 import { profile } from '../data/portfolio';
+import { pagePath, type Locale } from '../lib/i18n';
 import { revision, commitUrl } from '../lib/site-source';
+interface Props { lang: Locale; }
+const { lang } = Astro.props;
 ---
 <footer class="site-footer">
   <span>© {profile.name}</span>
-  <a href="/engineering/">How this site works</a>
+  <a href={pagePath(lang, 'engineering')}>How this site works</a>
   {revision ? <a href={commitUrl!} title={revision}>Built from {revision.slice(0, 7)} <span aria-hidden="true">↗</span></a> : <span>Local preview</span>}
 </footer>

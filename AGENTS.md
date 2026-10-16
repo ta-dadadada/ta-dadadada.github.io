@@ -18,7 +18,8 @@ EngineeringとSHA対応リンクは実装済み。監査はPhase 3。不要な�
 - セットアップ・公開方法：`README.md`
 - Phase 1のUI要件・受け入れ条件：`docs/phase-1.md`
 - Astro採用理由：`docs/decisions/0001-static-site-generator.md`
-- 掲載文：`src/data/portfolio.ts`、見出し・空状態：`src/pages/index.astro`
+- 紹介データ：`src/data/portfolio.ts`、画面文言：`src/data/translations.ts`
+- 画面構造：`src/components/PortfolioPage.astro`、`src/components/EngineeringPage.astro`
 - 全体の見た目：`src/styles/global.css`、文書共通枠：`src/layouts/BaseLayout.astro`
 
 Node.js 24を推奨。`npm ci` → `npm test` → `npm run check` → `npm run build`。
@@ -28,3 +29,5 @@ Node.js 24を推奨。`npm ci` → `npm test` → `npm run check` → `npm run b
 - Phase 2の要件：`docs/phase-2.md`、構成：`docs/architecture.md`
 - SHAとソース対応表：`src/lib/site-source.ts`。公開版リンクは実際のHEADと一致させる。
 - ローカルはLocal preview。公開形式の検証はクリーンなコミットで`GITHUB_ACTIONS=true npm run build`。
+
+- 日英対応：`docs/localization.md`。既定の日本語URLを維持し、英語は`/en/`配下。文言の更新時は両言語を揃える。
