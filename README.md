@@ -4,7 +4,7 @@
 公開先：<https://ta-dadadada.github.io/>
 
 現在はPhase 1の実装。Hero / About / Projects / Writing / Linksを単一ページにまとめています。
-紹介文は仮です。tenkoの公開URLと技術記事は未掲載で、確認後に追加します。
+紹介文は仮です。各プロジェクトの公開URLと技術記事は未掲載で、確認後に追加します。
 
 ## 開発
 

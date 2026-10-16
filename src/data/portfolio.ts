@@ -21,8 +21,7 @@ export const projects: Project[] = [
     category: 'REPOSITORY / AI',
     problem: 'AIエージェントに開発を任せるとき、リポジトリはどこまで準備できているか。',
     approach: '開発タスクに照らしてリポジトリを評価し、根拠と改善の余地を整理するプロジェクト。',
-    status: '紹介文は仮です。最新の状況はリポジトリをご覧ください。',
-    url: 'https://github.com/ta-dadadada/AI-ready-repository-audit',
+    status: '紹介文は仮です。ソースコードの公開リンクは準備中です。',
   },
   {
     name: 'tenko',
