@@ -296,3 +296,31 @@ h3 {
     transition:color .15s ease;
   }
 }
+
+.source-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:20px;
+  color:var(--muted);
+  font-size:11px;
+}
+.source-links a {
+  padding:4px 0;
+}
+.engineering {
+  max-width:800px;
+  padding:30px 0 60px;
+}
+.engineering section {
+  margin-top:36px;
+}
+.engineering h2 {
+  margin-bottom:12px;
+}
+.engineering li + li {
+  margin-top:10px;
+}
+.build-revision {
+  overflow-wrap:anywhere;
+}

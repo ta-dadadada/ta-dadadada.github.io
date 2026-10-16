@@ -1,0 +1,9 @@
+---
+import { profile } from '../data/portfolio';
+import { revision, commitUrl } from '../lib/site-source';
+---
+<footer class="site-footer">
+  <span>© {profile.name}</span>
+  <a href="/engineering/">How this site works</a>
+  {revision ? <a href={commitUrl!} title={revision}>Built from {revision.slice(0, 7)} <span aria-hidden="true">↗</span></a> : <span>Local preview</span>}
+</footer>

@@ -1,0 +1,8 @@
+---
+import { revision, sectionSources, sourceUrl } from '../lib/site-source';
+interface Props { section: keyof typeof sectionSources; }
+const { section } = Astro.props;
+---
+{revision && <div class="source-links" aria-label="対応する実装">
+  {sectionSources[section].map(({ label, path }) => <a href={sourceUrl(path)!}>{label}<span class="sr-only">：{path}</span> <span aria-hidden="true">↗</span></a>)}
+</div>}

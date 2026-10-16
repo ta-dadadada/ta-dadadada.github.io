@@ -9,9 +9,9 @@
 
 ## 目的と範囲
 
-人間が活動と成果物を理解できるポートフォリオを優先する。現在はPhase 1。
+人間が活動と成果物を理解できるポートフォリオを優先する。現在はPhase 2。
 紹介文は仮。未確認の経歴、プロジェクトの成熟度、外部URLを推測で追加しない。
-Engineering、SHA表示、監査は後続フェーズ。不要な依存、追跡スクリプト、クライアントJavaScriptを追加しない。
+EngineeringとSHA対応リンクは実装済み。監査はPhase 3。不要な依存、追跡スクリプト、クライアントJavaScriptを追加しない。
 
 ## 入口と手順
 
@@ -21,6 +21,10 @@ Engineering、SHA表示、監査は後続フェーズ。不要な依存、追跡
 - 掲載文：`src/data/portfolio.ts`、見出し・空状態：`src/pages/index.astro`
 - 全体の見た目：`src/styles/global.css`、文書共通枠：`src/layouts/BaseLayout.astro`
 
-Node.js 24を推奨。`npm ci` → `npm run check` → `npm run build`。
+Node.js 24を推奨。`npm ci` → `npm test` → `npm run check` → `npm run build`。
 画面変更時は`npm run preview`で広い画面と狭い画面、主要リンク、キーボード操作を確認する。
 公開はmainへのpushを契機とする。公開先は`https://ta-dadadada.github.io/`。
+
+- Phase 2の要件：`docs/phase-2.md`、構成：`docs/architecture.md`
+- SHAとソース対応表：`src/lib/site-source.ts`。公開版リンクは実際のHEADと一致させる。
+- ローカルはLocal preview。公開形式の検証はクリーンなコミットで`GITHUB_ACTIONS=true npm run build`。

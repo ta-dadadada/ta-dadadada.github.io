@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from '../components/Footer.astro';
+import { profile } from '../data/portfolio';
+import { revision, commitUrl, repositoryUrl, sourceUrl, decisions } from '../lib/site-source';
+---
+<BaseLayout title={`How this site works — ${profile.name}`} description="このポートフォリオの技術構成、設計判断、ソースコードと公開版の情報。">
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="wordmark" href="/">{profile.name}<span aria-hidden="true">.</span></a>
+      <nav aria-label="ページナビゲーション"><a href="/">Portfolioへ戻る</a></nav>
+    </header>
+    <main id="main" class="engineering" tabindex="-1">
+      <h1>How this site works</h1>
+      <p>このサイトの構成と、設計上の選択について。</p>
+      {!revision && <p class="muted">Local preview：公開版との対応リンクは、GitHub Actionsの公開ビルドで生成します。</p>}
+      <section aria-labelledby="architecture-heading">
+        <h2 id="architecture-heading">Architecture</h2>
+        <p>AstroとTypeScriptでHTMLを生成し、GitHub Pagesから配信しています。スタイルはCSSで記述し、クライアントサイドJavaScriptや外部フォントは使っていません。</p>
+        {revision ? <p><a href={sourceUrl('docs/architecture.md')!}>アーキテクチャ文書を読む <span aria-hidden="true">↗</span></a></p> : <p class="muted">詳細：docs/architecture.md</p>}
+      </section>
+      <section aria-labelledby="decisions-heading">
+        <h2 id="decisions-heading">Design Decisions</h2>
+        <p>選択肢とトレードオフを伴う判断をADRとして記録しています。</p>
+        <ul>{decisions.map(({ title, path }) => <li>{revision ? <a href={sourceUrl(path)!}>{title} <span aria-hidden="true">↗</span></a> : <span>{title}</span>}</li>)}</ul>
+      </section>
+      <section aria-labelledby="source-heading">
+        <h2 id="source-heading">Source Code</h2>
+        <p><a href={repositoryUrl}>このサイトのソースコード <span aria-hidden="true">↗</span></a></p>
+        <p>Portfolioの各セクションにあるsourceは表示の実装、dataは紹介データへのリンクです。公開版と同じコミットのファイルを参照します。</p>
+      </section>
+      <section aria-labelledby="audit-heading">
+        <h2 id="audit-heading">AI-Ready Audit</h2>
+        <p>未実施です。Phase 3で監査と代表的な開発作業による確認を行い、結果と確認できた範囲を公開する予定です。</p>
+        <p>現時点で、このリポジトリのAI-Ready性を検証済みとは扱いません。</p>
+      </section>
+      <section aria-labelledby="build-heading">
+        <h2 id="build-heading">Build Information</h2>
+        {revision ? <><p>この公開版のビルド元コミット：</p><p><a class="build-revision" href={commitUrl!}>{revision}</a></p></> : <p>Local preview：ローカルの変更を含む可能性があるため、公開版のSHAは表示しません。</p>}
+        <p>このページのソースと文書へのリンクも、同じコミットを参照しています。</p>
+      </section>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>
