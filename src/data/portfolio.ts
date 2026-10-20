@@ -31,6 +31,22 @@ const jaProjects: Project[] = [
     approach: 'AIコーディングエージェントのセッションログを収集・分析するツール。',
     status: '紹介文は仮です。公開リンク・活動状況は確認後に掲載します。',
   },
+  {
+    name: 'trrbot-ts-bolt',
+    category: 'SLACK / BOT',
+    problem: 'Slack上で、サイコロや選択肢のランダム抽選を使えるようにする。',
+    approach: 'TypeScriptとSlack Boltで実装したSlackボット。',
+    status: 'GitHubでソースコードを公開しています。',
+    url: 'https://github.com/ta-dadadada/trrbot-ts-bolt',
+  },
+  {
+    name: 'skills',
+    category: 'DEVELOPER TOOLS / AI',
+    problem: 'AIエージェントとの開発手順を、再利用できる形にまとめる。',
+    approach: '開発作業の手順をSKILL.mdとして管理・配布する、Agent Skills形式のスキル集。',
+    status: 'GitHubでソースコードを公開しています。',
+    url: 'https://github.com/ta-dadadada/skills',
+  },
 ];
 
 
@@ -55,6 +71,22 @@ export const portfolio: Record<Locale, { about: string; projects: Project[] }> =
         problem: 'Reflecting on development with AI coding agents through session logs.',
         approach: 'A tool for collecting and analyzing session logs from AI coding agents.',
         status: 'Draft introduction. A public link and project status will be added after confirmation.',
+      },
+      {
+        name: 'trrbot-ts-bolt',
+        category: 'SLACK / BOT',
+        problem: 'Roll dice and randomly pick from a set of options in Slack.',
+        approach: 'A Slack bot built with TypeScript and Slack Bolt.',
+        status: 'Source code is available on GitHub.',
+        url: 'https://github.com/ta-dadadada/trrbot-ts-bolt',
+      },
+      {
+        name: 'skills',
+        category: 'DEVELOPER TOOLS / AI',
+        problem: 'Make development workflows with AI agents reusable.',
+        approach: 'A collection in the Agent Skills format, distributing development workflows as SKILL.md files.',
+        status: 'Source code is available on GitHub.',
+        url: 'https://github.com/ta-dadadada/skills',
       },
     ],
   },
