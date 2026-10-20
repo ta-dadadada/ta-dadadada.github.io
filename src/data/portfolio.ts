@@ -34,14 +34,12 @@ const jaProjects: Project[] = [
 ];
 
 
-export const portfolio: Record<Locale, { introduction: string; about: string; projects: Project[] }> = {
+export const portfolio: Record<Locale, { about: string; projects: Project[] }> = {
   ja: {
-    introduction: 'ソフトウェアをつくり、そのつくり方を考える。',
     about: 'AIエージェントとソフトウェア開発の関わりを中心に、個人開発や技術的な探究をまとめていく場所です。',
     projects: jaProjects,
   },
   en: {
-    introduction: 'Building software and thinking about how it is built.',
     about: 'A place for personal projects and technical exploration, with a focus on AI agents and software development.',
     projects: [
       {

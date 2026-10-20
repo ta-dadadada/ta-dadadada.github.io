@@ -13,7 +13,7 @@ const t = translations[lang];
 <BaseLayout title={`How this site works — ${profile.name}`} description={t.engineeringDescription} lang={lang} page="engineering">
   <div class="page-shell">
     <header class="site-header">
-      <a class="wordmark" href={pagePath(lang, 'portfolio')}>{profile.name}<span aria-hidden="true">.</span></a>
+      <a class="wordmark" href={pagePath(lang, 'portfolio')}>{profile.name}</a>
       <div class="header-actions"><nav aria-label={t.pageNavigation}><a href={pagePath(lang, 'portfolio')}>{t.back}</a></nav><LanguageSwitcher lang={lang} page="engineering" /></div>
     </header>
     <main id="main" class="engineering" tabindex="-1">

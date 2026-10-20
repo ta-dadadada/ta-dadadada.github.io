@@ -56,7 +56,7 @@ for (const lang of locales) {
   }
   if (revision) {
     for (const [section, sources] of Object.entries(sectionSources)) {
-      const id = section === 'hero' ? 'top' : section;
+      const id = section === 'profile' ? 'top' : section;
       const content = home.match(new RegExp(`<section\\b[^>]*\\bid="${id}"[^>]*>([\\s\\S]*?)</section>`))?.[1];
       assert.ok(content, `セクションが存在しない: ${id}`);
       for (const { path } of sources) assert.ok(content.includes(`${repository}/blob/${revision}/${path}`), `対応リンクがない: ${lang}/${id} → ${path}`);

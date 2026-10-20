@@ -23,7 +23,7 @@ export const commitUrl = revision ? `${repository}/commit/${revision}` : null;
 export const repositoryUrl = revision ? `${repository}/tree/${revision}` : repository;
 
 export const sectionSources = {
-  hero: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'copy', path: 'src/data/translations.ts' }],
+  profile: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'data', path: 'src/data/portfolio.ts' }],
   about: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'copy', path: 'src/data/translations.ts' }, { label: 'data', path: 'src/data/portfolio.ts' }],
   projects: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'copy', path: 'src/data/translations.ts' }, { label: 'data', path: 'src/data/portfolio.ts' }],
   writing: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'copy', path: 'src/data/translations.ts' }],

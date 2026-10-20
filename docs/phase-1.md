@@ -1,5 +1,7 @@
 # Phase 1: Minimum Portfolio
 
+この文書はPhase 1の記録。現在の表示構成は`docs/design.md`を参照する。
+
 ## 範囲
 
 日本語中心の単一ページ。公開名義はta-dadadada。紹介文は仮と明記し、未確認の経歴・公開URL・実績は補わない。

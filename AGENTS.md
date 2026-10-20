@@ -31,3 +31,5 @@ Node.js 24を推奨。`npm ci` → `npm test` → `npm run check` → `npm run b
 - ローカルはLocal preview。公開形式の検証はクリーンなコミットで`GITHUB_ACTIONS=true npm run build`。
 
 - 日英対応：`docs/localization.md`。既定の日本語URLを維持し、英語は`/en/`配下。文言の更新時は両言語を揃える。
+
+- 現在の表示構成：`docs/design.md`。B案のサイドバー構成を日英で共有する。
