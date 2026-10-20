@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
 import { repository, revision, sectionSources, decisions } from '../src/lib/site-source.ts';
+import { talks } from '../src/data/portfolio.ts';
 import { locales, pagePath } from '../src/lib/i18n.ts';
 
 const origin = 'https://ta-dadadada.github.io';
@@ -20,6 +21,9 @@ for (const lang of locales) {
   const engineering = readPage(pagePath(lang, 'engineering'));
   assert.ok(home.includes(`href="${pagePath(lang, 'engineering')}"`), '同じ言語のEngineering導線が必要');
   assert.ok(engineering.includes(`href="${pagePath(lang, 'portfolio')}"`), '同じ言語のPortfolio戻り先が必要');
+  assert.ok(home.includes('id="talks"'), '登壇資料は記事と別セクションにする');
+  assert.ok(home.includes('href="https://speakerdeck.com/tadadadada"'), '登壇資料の公開先への導線が必要');
+  for (const talk of talks) assert.ok(home.includes(`href="${talk.url}"`), `登壇資料のリンクがない: ${talk.url}`);
   assert.ok(engineering.includes(lang === 'ja' ? '未実施' : 'Not yet audited'), '監査状態を明示する');
   assert.ok(home.includes(lang === 'ja' ? '紹介文は仮' : 'Introductions are drafts'), '翻訳済みの仮紹介表示が必要');
   for (const [page, html] of [['portfolio', home], ['engineering', engineering]]) {

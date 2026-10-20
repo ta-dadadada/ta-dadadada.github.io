@@ -3,7 +3,7 @@
 個人開発と技術的な関心を紹介する、日本語・英語に対応した静的ポートフォリオ。
 公開先：<https://ta-dadadada.github.io/>
 
-現在はPhase 2の実装。Hero / About / Projects / Writing / Linksを単一ページにまとめています。
+現在はPhase 2の実装。Hero / About / Projects / Writing / Talks / Linksを単一ページにまとめています。
 紹介文は仮です。各プロジェクトの公開URLと技術記事は未掲載で、確認後に追加します。
 
 ## 開発
@@ -57,3 +57,7 @@ AI-Ready監査と実作業での評価はPhase 3で扱います。
 画面文言と紹介データを更新するときは両言語を揃えてください。GitHub上の構成文書とADRは日本語です。
 URL・言語メタ情報・参照リンクはビルド時に4ページ分を検査します。
 詳細は[日英対応](docs/localization.md)と[ADR-0005](docs/decisions/0005-localization.md)を参照してください。
+
+登壇資料はTalksに技術記事と分けて掲載し、[Speaker Deck](https://speakerdeck.com/tadadadada)の公開資料3件と一覧へリンクします。
+資料の原題・URLと英語の紹介用タイトルは`src/data/portfolio.ts`で管理します。英語ページにも、資料自体は日本語であることを明記しています。
+公開一覧は2026-10-21に確認しました。外部資料の埋め込みや自動取得は行いません。

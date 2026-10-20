@@ -2,7 +2,7 @@
 import Footer from './Footer.astro';
 import SourceLinks from './SourceLinks.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { profile, portfolio } from '../data/portfolio';
+import { profile, portfolio, talks } from '../data/portfolio';
 import { translations } from '../data/translations';
 import type { Locale } from '../lib/i18n';
 import LanguageSwitcher from './LanguageSwitcher.astro';
@@ -12,7 +12,7 @@ const t = translations[lang];
 const content = portfolio[lang];
 const { projects } = content;
 const navigation = [
-  ['about', 'About'], ['projects', 'Projects'], ['writing', 'Writing'], ['links', 'Links'],
+  ['about', 'About'], ['projects', 'Projects'], ['writing', 'Writing'], ['talks', 'Talks'], ['links', 'Links'],
 ];
 ---
 <BaseLayout title={`${profile.name} — Portfolio`} description={t.description} lang={lang} page="portfolio">
@@ -53,8 +53,19 @@ const navigation = [
         <div class="section-label"><span>03 / WRITING</span><h2 id="writing-heading">{t.writing}</h2></div>
         <div class="section-body"><p class="lead">{t.writingLead}</p><p>{t.writingDescription}</p><p class="muted">{t.writingEmpty}</p><SourceLinks section="writing" /></div>
       </section>
+      <section class="content-section" id="talks" aria-labelledby="talks-heading">
+        <div class="section-label"><span>04 / TALKS</span><h2 id="talks-heading">{t.talks}</h2></div>
+        <div class="section-body">
+          <p>{t.talksDescription}</p>
+          <ul class="talk-list">
+            {talks.map(talk => <li><a href={talk.url} hreflang="ja">{talk.title[lang]}</a></li>)}
+          </ul>
+          <a class="text-link" href={profile.speakerdeck}>{t.viewTalks} <span aria-hidden="true">↗</span></a>
+          <SourceLinks section="talks" />
+        </div>
+      </section>
       <section class="content-section" id="links" aria-labelledby="links-heading">
-        <div class="section-label"><span>04 / LINKS</span><h2 id="links-heading">{t.links}</h2></div>
+        <div class="section-label"><span>05 / LINKS</span><h2 id="links-heading">{t.links}</h2></div>
         <div class="section-body"><a class="profile-link" href={profile.github}><span>GitHub<small>@{profile.name}</small></span><span aria-hidden="true">↗</span></a><SourceLinks section="links" /></div>
       </section>
     </main>

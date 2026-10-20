@@ -341,3 +341,12 @@ h3 {
 html[lang="en"] .hero h1 {
   overflow-wrap:anywhere;
 }
+
+.talk-list {
+  padding-left:1.25rem;
+  font-size:14px;
+  overflow-wrap:anywhere;
+}
+.talk-list li + li {
+  margin-top:16px;
+}

@@ -27,6 +27,7 @@ export const sectionSources = {
   about: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'copy', path: 'src/data/translations.ts' }, { label: 'data', path: 'src/data/portfolio.ts' }],
   projects: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'copy', path: 'src/data/translations.ts' }, { label: 'data', path: 'src/data/portfolio.ts' }],
   writing: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'copy', path: 'src/data/translations.ts' }],
+  talks: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'copy', path: 'src/data/translations.ts' }, { label: 'data', path: 'src/data/portfolio.ts' }],
   links: [{ label: 'source', path: 'src/components/PortfolioPage.astro' }, { label: 'copy', path: 'src/data/translations.ts' }, { label: 'data', path: 'src/data/portfolio.ts' }],
 };
 

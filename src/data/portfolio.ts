@@ -4,6 +4,7 @@ import type { Locale } from '../lib/i18n';
 export const profile = {
   name: 'ta-dadadada',
   github: 'https://github.com/ta-dadadada',
+  speakerdeck: 'https://speakerdeck.com/tadadadada',
 };
 
 interface Project {
@@ -60,3 +61,29 @@ export const portfolio: Record<Locale, { introduction: string; about: string; pr
     ],
   },
 };
+
+
+// ユーザー提供のSpeaker Deck公開一覧で2026-10-21に確認。資料本文は日本語。
+export const talks = [
+  {
+    title: {
+      ja: '【NRUG : New Relic User Group@20210915】Prometheus を捨てない NewRelic の活用方法',
+      en: 'NRUG: Using New Relic without giving up Prometheus',
+    },
+    url: 'https://speakerdeck.com/tadadadada/nrug-lt-20210915',
+  },
+  {
+    title: {
+      ja: '【春のAWS コンテナ祭り】コンテナうまみつらみ〜Kubernetes初心者がEKSと格闘した1年を振り返る',
+      en: 'AWS Container Festival: Lessons from a first year with Kubernetes and EKS',
+    },
+    url: 'https://speakerdeck.com/tadadadada/aws-container-matsuri-20200320',
+  },
+  {
+    title: {
+      ja: 'コンテナうまみつらみ〜Kubernetes初心者がEKSと格闘した1年を振り返る',
+      en: 'The ups and downs of containers: A first year with Kubernetes and EKS',
+    },
+    url: 'https://speakerdeck.com/tadadadada/container-umami-tsurami',
+  },
+];
